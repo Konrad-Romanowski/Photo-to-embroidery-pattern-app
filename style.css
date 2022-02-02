@@ -1,0 +1,162 @@
+:root {
+ --dark-red: #930101;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-image: url('./assets/header-bg.jpg');
+    height: 700px;
+    width: 100%;
+    background-position: center;
+}
+
+.header-bg-filter {
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.header-content {
+    color: #ffffff;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 560px;
+}
+
+.title, .subtitle {
+    font-family: 'Dancing Script', cursive; 
+}
+
+.title {
+    font-size: 78px;
+}
+
+.subtitle {
+    width: 600px;
+    font-weight: 100;
+    font-size: 36px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 14px;
+}
+
+.action-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 360px;
+}
+
+.action-btn {
+    height: 54px;
+    font-size: 20px;
+}
+
+.learn-more-btn {
+    border: solid 1px #ffffff;
+}
+
+.create-now-btn {
+    background-color: #c40916;
+}
+
+.description {
+    background-color: var(--dark-red,#930101);
+    color: #ffffff;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    text-align: center;
+}
+
+.description-title {
+    font-size: 46px;
+    font-weight: 100;
+}
+
+.description-content {
+    align-self: center;
+    font-weight: 400;
+    max-width: 650px;
+    font-size: 22px;
+    line-height: 2.5em;
+}
+
+.faq {
+    text-align: center;
+}
+
+.faq-item {
+    padding: 2em 0;
+}
+
+.faq h1 {
+    color: var(--dark-red,#930101);
+    font-size: 30px;
+    font-weight: 300;
+    margin: .5em 0;
+}
+
+.faq p {
+    max-width: 625px;
+    margin: auto;
+    line-height: 34px;
+    font-size: 16px;
+    color: #303030;
+    padding: 1em 0;
+}
+
+.separating-img {
+    height:300px;
+    background-image: url('./assets/embroidery-hoop.jpg');
+    background-position: 50% 30%;
+    border-top: 1px solid var(--dark-red,#930101);
+    border-bottom: 1px solid var(--dark-red,#930101);
+}
+
+.create h1 {
+    color: var(--dark-red,#930101);
+    text-align: center;
+    padding-top: 1em;
+    margin-bottom: 1.7em;
+    font-size: 46px;
+    font-weight: 100;
+    letter-spacing: -1px;
+}
+
+.create-btn {
+    display: block;
+    margin: 0 auto 2em auto;
+    padding: 0.7em;
+    background-color: #ffffff;
+    border: 1px solid var(--dark-red,#930101);
+    color: var(--dark-red,#930101);
+    width: 200px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.create-btn:hover {
+    color: #ffffff;
+    background-color: var(--dark-red,#930101);
+}
+
