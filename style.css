@@ -1,5 +1,6 @@
 :root {
  --dark-red: #930101;
+ --dark-grey: #303030;
 }
 
 * {
@@ -45,8 +46,6 @@ html {
 .nav-item a:hover {
     border-bottom: 1px solid #ffffff;
 }
-
-
 
 header {
     background-image: url('./assets/header-bg.jpg');
@@ -105,14 +104,24 @@ a {
 .action-btn {
     height: 54px;
     font-size: 20px;
+    transition: all 0.2s ease;
 }
 
 .learn-more-btn {
     border: solid 1px #ffffff;
 }
 
+.learn-more-btn:hover {
+    background-color: #ffffff;
+    color: var(--dark-grey,#303030);
+}
+
 .create-now-btn {
     background-color: #c40916;
+}
+
+.create-now-btn:hover {
+    background-color: #f50716;
 }
 
 .description {
@@ -159,7 +168,7 @@ a {
     margin: auto;
     line-height: 34px;
     font-size: 16px;
-    color: #303030;
+    color: var(--dark-grey,#303030);
     padding: 1em 0;
 }
 
@@ -198,4 +207,3 @@ a {
     color: #ffffff;
     background-color: var(--dark-red,#930101);
 }
-
