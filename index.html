@@ -58,9 +58,33 @@
     <section class="separating-img"></section>
 
     <div id="create-scroll-marker"></div>
+
     <section class="create">
         <h1>Create your own pattern now!</h1>
-        <button id="create-btn" class="create-btn">Select image</button>
+        <label for="image-input" class="create-btn">Select image</label>
+        <input type="file" id="image-input">
+    </section>
+    
+    <section id="previev-section" class="preview-section">
+        <h1 class="previev-section-header">You have selected following image</h1>
+        <div class="preview-container">
+            <div class="image-details-container">
+                <div class="image-detail">
+                    <h5 class="image-detail-header">Image name</h5>
+                    <div class="image-name"></div>
+                </div>
+                <div class="image-detail">
+                    <h5 class="image-detail-header">Image resolution</h5>
+                    <div class="image-resolution"></div>
+                </div>
+                <div class="image-detail">
+                    <h5 class="image-detail-header">Choose size of the stich: <span class="bold" id="stich-size-value">10</span></h5>
+                    <input type="range" min="10" max="15" name="slider" id="stich-size" class="stich-size-slider">
+                </div>
+            </div>
+            <img id="preview-image" class="preview-image" src="" alt="">
+        </div>
+        <button class="create-pattern-btn">Create pattern</button>
     </section>
 
     <script src="main.js"></script>

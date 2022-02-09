@@ -201,9 +201,80 @@ a {
     font-size: 20px;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-align: center;
 }
 
 .create-btn:hover {
     color: #ffffff;
     background-color: var(--dark-red,#930101);
+}
+
+#image-input {
+    display: none;
+}
+
+.preview-section {
+    border-top: 1px solid var(--dark-red,#930101);
+    border-bottom: 1px solid var(--dark-red,#930101);
+}
+
+.previev-section-header {
+    color: var(--dark-red,#930101);
+    text-align: center;
+    padding-top: 1em;
+    margin-bottom: 1em;
+    font-size: 36px;
+    font-weight: 200;
+}
+
+.preview-container {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.image-detail {
+    height: 100px;
+    width: 400px;
+    padding: 1rem;
+}
+
+.image-detail-header {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--dark-red,#930101);
+    padding-bottom: 1rem;
+}
+
+.bold {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.preview-image {
+    height: 100%;
+    width: auto;
+}
+
+.stich-size-slider {
+    width: 85%;
+}
+
+.create-pattern-btn {
+    display: block;
+    margin: 0 auto 2em auto;
+    padding: 0.7em;
+    background-color: var(--dark-red,#930101);
+    border: none;
+    color: #ffffff;
+    width: 200px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.create-pattern-btn:hover {
+    background-color: #c40916;
 }
