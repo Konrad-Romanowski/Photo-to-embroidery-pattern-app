@@ -214,6 +214,7 @@ a {
 }
 
 .preview-section {
+    display: none;
     border-top: 1px solid var(--dark-red,#930101);
     border-bottom: 1px solid var(--dark-red,#930101);
 }
@@ -236,7 +237,7 @@ a {
 
 .image-detail {
     height: 100px;
-    width: 400px;
+    min-width: 400px;
     padding: 1rem;
 }
 
@@ -255,6 +256,7 @@ a {
 .preview-image {
     height: 100%;
     width: auto;
+    border: 1px solid var(--dark-grey,#303030);
 }
 
 .stich-size-slider {
@@ -277,4 +279,14 @@ a {
 
 .create-pattern-btn:hover {
     background-color: #c40916;
+}
+
+.error-message {
+    display: none;
+    background-color: var(--dark-red,#930101);
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 36px;
+    font-weight: 200;
 }
