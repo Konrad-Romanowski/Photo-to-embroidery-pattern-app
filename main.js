@@ -10,7 +10,11 @@ document.addEventListener('scroll', ()=>{
     }
 });
 
+let img = new Image();
+
 const fileInput = document.getElementById('image-input');
+const stichSizeSlider = document.getElementById('stich-size');
+const patternSection = document.getElementById('pattern-section');
 
 fileInput.addEventListener('change', e => {
     const file = fileInput.files[0];
@@ -25,7 +29,6 @@ fileInput.addEventListener('change', e => {
         const imageNameContainer = document.getElementById('image-name');
         const imageResolutionContainer = document.getElementById('image-resolution');
         const stichSizeValueSpan = document.getElementById('stich-size-value');
-        const stichSizeSlider = document.getElementById('stich-size')
         const previewImageContainer = document.getElementById('preview-image');
         imageNameContainer.innerText = file.name;
 
@@ -37,7 +40,6 @@ fileInput.addEventListener('change', e => {
         });
 
         reader.onload = e => {
-            const img = new Image();
             img.src = reader.result;
             img.onload = () =>{
                 previewImageContainer.src = img.src;
@@ -50,10 +52,62 @@ fileInput.addEventListener('change', e => {
         previevSection.style.display = 'block';
         previevSection.scrollIntoView();
     } else {
-        // Case when file not supported!
+        // Case when slected file is not supported
 
         previevSection.style.display = 'none';
+        patternSection.style.display = 'none';
         errorMessageSection.style.display = 'block';
         errorMessageSection.scrollIntoView();
     }
+});
+
+const canvas = document.getElementById('embroidery-canvas');
+const ctx = canvas.getContext('2d');
+
+document.getElementById('create-pattern-btn').addEventListener('click', e => {
+    let scale = parseInt(stichSizeSlider.value);
+
+    let patternRows = Math.floor(img.height/scale) + (img.height % scale === 0 ? 0 : 1 );
+    let patternColumns = Math.floor(img.width/scale) + (img.width % scale === 0 ? 0 : 1 );
+
+    canvas.width = patternColumns * scale;
+    canvas.height = patternRows * scale;
+
+    ctx.drawImage(img, 0, 0, patternColumns * scale, patternRows * scale);
+
+    let imageMap = [];
+    for(let i = 0; i < patternColumns; i++) {
+        imageMap[i] = [];
+    }
+
+    for (let xCoord = 0; xCoord < patternColumns; xCoord++) {
+        for (let yCoord = 0; yCoord < patternRows; yCoord++) {
+            imageMap[xCoord][yCoord] = {rgbData: [
+                ctx.getImageData(xCoord*scale, yCoord*scale, 1, 1).data[0],
+                ctx.getImageData(xCoord*scale, yCoord*scale, 1, 1).data[1],
+                ctx.getImageData(xCoord*scale, yCoord*scale, 1, 1).data[2]
+            ]}
+            ctx.fillStyle = `rgb(${[...imageMap[xCoord][yCoord].rgbData]})`;
+            ctx.fillRect(xCoord*scale, yCoord*scale, scale, scale);
+        }
+    }
+
+    // Draw vertical lines
+    for(let i = 0; i <= patternColumns; i++){
+        ctx.beginPath();
+        ctx.moveTo(i*scale,0);
+        ctx.lineTo(i*scale, patternRows*scale);
+        ctx.stroke(); 
+    }
+
+    //Draw horizontal lines
+    for(let i = 0; i <= patternRows; i++){
+        ctx.beginPath();
+        ctx.moveTo(0,i*scale);
+        ctx.lineTo(patternColumns*scale, i*scale);
+        ctx.stroke(); 
+    }
+
+    patternSection.style.display = 'block';
+    patternSection.scrollIntoView();
 });

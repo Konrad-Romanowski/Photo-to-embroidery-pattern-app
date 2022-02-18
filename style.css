@@ -290,3 +290,23 @@ a {
     font-size: 36px;
     font-weight: 200;
 }
+
+.pattern-section {
+    display: none;
+}
+
+.pattern-section-header {
+    color: var(--dark-red,#930101);
+    text-align: center;
+    margin: 3rem auto;
+    font-size: 46px;
+    font-weight: 100;
+    letter-spacing: -1px;
+}
+
+.embroidery-canvas {
+    display: block;
+    margin: 0 auto 3rem auto;
+    max-width: 80%;
+    max-height: 80vh;
+}
