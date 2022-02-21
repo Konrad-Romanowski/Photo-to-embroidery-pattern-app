@@ -75,6 +75,8 @@ document.getElementById('create-pattern-btn').addEventListener('click', e => {
 
     ctx.drawImage(img, 0, 0, patternColumns * scale, patternRows * scale);
 
+    const imageData = ctx.getImageData(0, 0, patternColumns * scale, patternRows * scale).data;
+
     let imageMap = [];
     for(let i = 0; i < patternColumns; i++) {
         imageMap[i] = [];
@@ -82,11 +84,16 @@ document.getElementById('create-pattern-btn').addEventListener('click', e => {
 
     for (let xCoord = 0; xCoord < patternColumns; xCoord++) {
         for (let yCoord = 0; yCoord < patternRows; yCoord++) {
-            imageMap[xCoord][yCoord] = {rgbData: [
-                ctx.getImageData(xCoord*scale, yCoord*scale, 1, 1).data[0],
-                ctx.getImageData(xCoord*scale, yCoord*scale, 1, 1).data[1],
-                ctx.getImageData(xCoord*scale, yCoord*scale, 1, 1).data[2]
-            ]}
+
+            const redColorIndexAtXY = yCoord*scale * (patternColumns * scale * 4) + xCoord*scale * 4;
+            
+            imageMap[xCoord][yCoord] = {rgbData: 
+                [
+                    imageData[redColorIndexAtXY],
+                    imageData[redColorIndexAtXY + 1],
+                    imageData[redColorIndexAtXY + 2]
+                ]
+            }
             ctx.fillStyle = `rgb(${[...imageMap[xCoord][yCoord].rgbData]})`;
             ctx.fillRect(xCoord*scale, yCoord*scale, scale, scale);
         }
