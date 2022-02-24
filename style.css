@@ -48,7 +48,7 @@ html {
 }
 
 header {
-    background-image: url('./assets/header-bg.jpg');
+    background-image: url('./images/header-bg.jpg');
     height: 700px;
     width: 100%;
     background-position: center;
@@ -174,7 +174,7 @@ a {
 
 .separating-img {
     height:300px;
-    background-image: url('./assets/embroidery-hoop.jpg');
+    background-image: url('./images/embroidery-hoop.jpg');
     background-position: 50% 30%;
     border-top: 1px solid var(--dark-red,#930101);
     border-bottom: 1px solid var(--dark-red,#930101);
