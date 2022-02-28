@@ -263,7 +263,7 @@ a {
     width: 85%;
 }
 
-.create-pattern-btn {
+.create-pattern-btn, .download-pattern-btn {
     display: block;
     margin: 0 auto 2em auto;
     padding: 0.7em;
@@ -277,7 +277,7 @@ a {
     text-align: center;
 }
 
-.create-pattern-btn:hover {
+.create-pattern-btn:hover, .download-pattern-btn:hover {
     background-color: #c40916;
 }
 

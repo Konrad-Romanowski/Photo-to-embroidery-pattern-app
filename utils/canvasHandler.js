@@ -60,5 +60,4 @@ export default function handleCanvas(img) {
         patternSection.style.display = 'block';
         patternSection.scrollIntoView();
     });
-
 }
