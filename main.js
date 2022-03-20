@@ -1,11 +1,11 @@
-import applyScrollingEffectToNavbar from './utils/navbarScrollingEffect.js';
+import handleNavbar from './utils/navbarHandler.js';
 import handlePreview from './utils/previewHandler.js';
 import handleCanvas from './utils/canvasHandler.js';
 import handleDownload from './utils/downladHandler.js';
 
 let img = new Image();
 
-applyScrollingEffectToNavbar();
+handleNavbar();
 handlePreview(img);
 handleCanvas(img);
 handleDownload();

@@ -21,6 +21,10 @@ html {
     bottom: 64px;
 }
 
+.menu-icon {
+    display: none;
+}
+
 .nav-bar {
     position: fixed;
     color: #ffffff;
@@ -49,7 +53,7 @@ html {
 
 header {
     background-image: url('./images/header-bg.jpg');
-    height: 700px;
+    height: 80vh;
     width: 100%;
     background-position: center;
 }
@@ -308,4 +312,254 @@ a {
     display: block;
     margin: 0 auto 3rem auto;
     max-width: 80%;
+}
+
+@media (max-width: 1050px) {
+
+    .header-bg-filter {
+        justify-content: center;
+    }
+
+    .description-title {
+        font-size: 38px;
+        line-height: 64px;
+        padding: 0 48px;
+    }
+
+    .description-content {
+        max-width: 100%;
+        font-size: 20px;
+        padding: 0 48px;
+    }
+
+    .learn-more-btn {
+        background-color: #ffffff;
+        color: var(--dark-grey,#303030);
+    }
+
+    .faq h1 {
+        font-size: 30px;
+        margin: .5em .5em;
+        line-height: 48px;
+    }
+
+    .preview-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .image-details-container {
+        margin-bottom: 2rem;
+    }
+
+    .image-detail {
+        height: auto;
+    }
+
+    .image-detail-header {
+        padding-bottom: 0.5rem;
+    }
+
+    .preview-image {
+        height: 300px;
+        width: auto;
+    }
+
+    .embroidery-canvas {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 515px) {
+
+    #description-scroll-marker,
+    #faq-scroll-marker,
+    #create-scroll-marker {
+        position: relative;
+        bottom: 0;
+    }
+
+    .menu-icon {
+        display: block;
+        position: fixed;
+        cursor: pointer;
+        height: 64px;
+        width: 64px;
+        right: 16px;
+        top: 16px;
+        background-color: rgba(0,0,0,.5);
+        z-index: 100;
+        transition: transform .3s .2s ease-in-out;
+    }
+
+    .menu-icon-container {
+        height: 100%;
+        position: relative;
+    }
+
+    .menu-icon-bar {
+        position:absolute;
+        height: 3px;
+        width: 70%;
+        transform: translateY(-50%);
+        background-color: #fff;
+        top: 50%;
+        left: 15%;
+        transition: background-color .2s .1s ease-in-out;
+    }
+
+    .menu-icon-bar::before, .menu-icon-bar::after {
+        position: absolute;
+        content:'';
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .menu-icon-bar::before {
+        transform: translateY(-16px);
+        transition: transform .2s .2s ease-in-out;
+    }
+
+    .menu-icon-bar::after {
+        transform: translateY(16px);
+        transition: transform .2s .2s ease-in-out;
+    }
+
+    .menu-icon.active {
+        transform: translateY(calc(256px));
+    }
+
+    .menu-icon.active .menu-icon-bar {
+        background-color: rgba(0,0,0,0);
+    }
+
+    .menu-icon.active .menu-icon-bar::before {
+        transform: rotate(-45deg);
+    }
+
+    .menu-icon.active .menu-icon-bar::after {
+        transform: rotate(45deg);
+    }
+
+    .nav-bar {
+        position: fixed;
+        display: block;
+        height: auto;
+        padding: 0;
+        background-color: rgba(0,0,0,0.7);
+        transform: translateY(-100%);
+        transition: transform .3s .2s ease-in-out;
+    }
+
+    .nav-bar.active {
+        transform: translateY(0);
+    }
+
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px dashed rgba(255,255,255,0.5);
+    }
+
+    .nav-item a {
+        display: block;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        line-height: 64px;
+    }
+
+    .nav-item a:hover {
+        border-bottom: none;
+    }
+
+    header {
+        height: 100vh;
+        width: 100%;
+        background-position: center;
+        background-size: 1400px;
+    }
+    
+    .header-bg-filter {
+        justify-content: center;
+    }
+    
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 600px;
+    }
+    
+    .title {
+        font-size: 12vw;
+    }
+    
+    .subtitle {
+        width: 100%;
+        font-weight: 100;
+        font-size: 9vw;
+        line-height: 52px;
+        text-align: center;
+    }
+    
+    a {
+        padding: 14px;
+    }
+    
+    .action-buttons-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
+    
+    .action-btn {
+        height: 54px;
+        font-size: 20px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .description {
+        height: auto;
+        display: block;
+        padding: 36px 0;
+    }
+    
+    .description-title {
+        font-size: max(9vw,22px);
+        font-weight: 100;
+        padding: 0;
+    }
+    
+    .description-content {
+        max-width: 100%;
+        font-size: 18px;
+        margin-top: 36px;
+        padding: 0 12px;
+    }
+
+    .faq p {
+        max-width: 85%;
+        margin: auto;
+        line-height: 34px;
+        font-size: 18px;
+    }
+
+    .separating-img {
+        height: 150px;
+        background-size: 700px;
+    }
+
+    .create h1 {
+        font-size: 36px;
+        line-height: 48px;
+        width: 96vw;
+    }
 }
