@@ -5,8 +5,8 @@ export default function handlePreview(img) {
     const previevSection = document.getElementById('previev-section');
     const imageNameContainer = document.getElementById('image-name');
     const imageResolutionContainer = document.getElementById('image-resolution');
-    const stichSizeValueSpan = document.getElementById('stich-size-value');
-    const stichSizeSlider = document.getElementById('stich-size');
+    const stitchSizeValueSpan = document.getElementById('stitch-size-value');
+    const stitchSizeSlider = document.getElementById('stitch-size');
     const previewImageContainer = document.getElementById('preview-image');
     const patternSection = document.getElementById('pattern-section');
     
@@ -20,11 +20,11 @@ export default function handlePreview(img) {
 
             imageNameContainer.innerText = file.name;
 
-            stichSizeSlider.value = 12;
-            stichSizeValueSpan.innerText = stichSizeSlider.value;
+            stitchSizeSlider.value = 12;
+            stitchSizeValueSpan.innerText = stitchSizeSlider.value;
 
-            stichSizeSlider.addEventListener('input', e => {
-                stichSizeValueSpan.innerText = e.target.value;
+            stitchSizeSlider.addEventListener('input', e => {
+                stitchSizeValueSpan.innerText = e.target.value;
             });
 
             reader.onload = e => {

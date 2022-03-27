@@ -256,7 +256,7 @@ a {
     padding-bottom: 1rem;
 }
 
-.image-detail-stich-info-icon {
+.image-detail-stitch-info-icon {
     position: absolute;
     color: var(--dark-red,#930101);
     border: 1px solid var(--dark-red,#930101);
@@ -274,18 +274,18 @@ a {
     transition: all 0.2s ease-in-out;
 }
 
-.image-detail-stich-info-icon:hover {
+.image-detail-stitch-info-icon:hover {
     color: #fff;
     background-color: var(--dark-red,#930101);
 }
 
-.image-detail-stich-info-icon span {
+.image-detail-stitch-info-icon span {
     position: relative;
     font-family: 'Times New Roman', Times, serif;
     user-select: none;
 }
 
-.image-detail-stich-info {
+.image-detail-stitch-info {
     display: none;
     position: absolute;
     background-color: #ffffff;
@@ -300,12 +300,12 @@ a {
     text-align: justify;
 }
 
-.image-detail-stich-info-icon:hover .image-detail-stich-info {
+.image-detail-stitch-info-icon:hover .image-detail-stitch-info {
     display: block;
 }
 
 
-.image-detail-stich-info-icon.active {
+.image-detail-stitch-info-icon.active {
     color: #ffffff;
     background-color: var(--dark-red,#930101);
 }
@@ -321,7 +321,7 @@ a {
     border: 1px solid var(--dark-grey,#303030);
 }
 
-.stich-size-slider {
+.stitch-size-slider {
     width: 85%;
 }
 
@@ -630,11 +630,11 @@ a {
         user-select: none;
     }
 
-    .image-detail-stich-info-icon {
+    .image-detail-stitch-info-icon {
         right: 2rem;
     }
 
-    .stich-size-slider {
+    .stitch-size-slider {
         width: 100%;
     }
 }

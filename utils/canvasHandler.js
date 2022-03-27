@@ -3,11 +3,11 @@ export default function handleCanvas(img) {
     const canvas = document.getElementById('embroidery-canvas');
     const ctx = canvas.getContext('2d');
     
-    const stichSizeSlider = document.getElementById('stich-size');
+    const stitchSizeSlider = document.getElementById('stitch-size');
     const patternSection = document.getElementById('pattern-section');
 
     document.getElementById('create-pattern-btn').addEventListener('click', e => {
-        let scale = parseInt(stichSizeSlider.value);
+        let scale = parseInt(stitchSizeSlider.value);
 
         let patternRows = Math.floor(img.height/scale) + (img.height % scale === 0 ? 0 : 1 );
         let patternColumns = Math.floor(img.width/scale) + (img.width % scale === 0 ? 0 : 1 );
