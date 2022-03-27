@@ -14,6 +14,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: #fcfcfc;
+}
+
 #description-scroll-marker,
 #faq-scroll-marker,
 #create-scroll-marker {
@@ -198,7 +202,6 @@ a {
     display: block;
     margin: 0 auto 2em auto;
     padding: 0.7em;
-    background-color: #ffffff;
     border: 1px solid var(--dark-red,#930101);
     color: var(--dark-red,#930101);
     width: 200px;
@@ -243,6 +246,7 @@ a {
     height: 100px;
     min-width: 400px;
     padding: 1rem;
+    position: relative;
 }
 
 .image-detail-header {
@@ -250,6 +254,60 @@ a {
     font-size: 14px;
     color: var(--dark-red,#930101);
     padding-bottom: 1rem;
+}
+
+.image-detail-stich-info-icon {
+    position: absolute;
+    color: var(--dark-red,#930101);
+    border: 1px solid var(--dark-red,#930101);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    top: 1rem;
+    right: calc(15% + 8px);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.image-detail-stich-info-icon:hover {
+    color: #fff;
+    background-color: var(--dark-red,#930101);
+}
+
+.image-detail-stich-info-icon span {
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    user-select: none;
+}
+
+.image-detail-stich-info {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    color:var(--dark-red,#930101);
+    border: 1px solid var(--dark-red,#930101);
+    padding: 1rem;
+    line-height: 1.2rem;
+    width: 300px;
+    font-weight: 400;
+    right: 8px;
+    top: 8px;
+    text-align: justify;
+}
+
+.image-detail-stich-info-icon:hover .image-detail-stich-info {
+    display: block;
+}
+
+
+.image-detail-stich-info-icon.active {
+    color: #ffffff;
+    background-color: var(--dark-red,#930101);
 }
 
 .bold {
@@ -404,7 +462,7 @@ a {
         height: 3px;
         width: 70%;
         transform: translateY(-50%);
-        background-color: #fff;
+        background-color: #ffffff;
         top: 50%;
         left: 15%;
         transition: background-color .2s .1s ease-in-out;
@@ -415,7 +473,7 @@ a {
         content:'';
         height: 3px;
         width: 100%;
-        background-color: #fff;
+        background-color: #ffffff;
     }
 
     .menu-icon-bar::before {
@@ -561,5 +619,22 @@ a {
         font-size: 36px;
         line-height: 48px;
         width: 96vw;
+    }
+
+    .image-detail {
+        min-width: 100vw;
+        padding: 1rem 2rem;
+    }
+
+    .preview-section {
+        user-select: none;
+    }
+
+    .image-detail-stich-info-icon {
+        right: 2rem;
+    }
+
+    .stich-size-slider {
+        width: 100%;
     }
 }
