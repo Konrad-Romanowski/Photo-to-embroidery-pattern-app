@@ -38,6 +38,7 @@ body {
     align-items: center;
     height: 64px;
     transition: background-color 0.5s ease-in-out;
+    z-index: 100;
 }
 
 .nav-bar.scrolled {
@@ -255,6 +256,19 @@ a {
     color: var(--dark-red,#930101);
     padding-bottom: 1rem;
 }
+
+/* .stitch-size-slider::-moz-range-track {
+    background: var(--dark-red,#930101);
+    height: 5px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.stitch-size-slider::-moz-range-thumb {
+    border-radius: 50%;
+    border: 2px solid var(--dark-red,#930101);
+    background: #fff;
+} */
 
 .image-detail-stitch-info-icon {
     position: absolute;
